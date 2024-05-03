@@ -6,5 +6,6 @@ public interface EmpService {
     String createEmployee(Employee emp);
     List<Employee> readEmployees();
     boolean deleteEmployee(Long id);
-    String updateEmployee(Employee emp);
+    boolean updateEmployee(Long id, Employee emp);
+    Employee readEmployeeById(Long id);
 }
