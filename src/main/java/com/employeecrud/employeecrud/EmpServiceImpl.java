@@ -3,14 +3,17 @@ package com.employeecrud.employeecrud;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class EmpServiceImpl implements EmpService {
 
     List<Employee> employees  = new ArrayList<>();
 
     @Override
-    public Employee createEmployee(Employee emp) {
+    public String createEmployee(Employee emp) {
         employees.add(emp);
-        return emp;
+        return "Created Successfully";
     }
 
     @Override
@@ -20,14 +23,14 @@ public class EmpServiceImpl implements EmpService {
 
     @Override
     public boolean deleteEmployee(Long id) {
-        return true;
+        return employees.remove(id);
     }
 
 
 
     @Override
-    public Employee updateEmployee(Employee emp) {
-        return emp;
+    public String updateEmployee(Employee emp) {
+        return "Updated Successfully";
     }
     
 }
